@@ -7,7 +7,12 @@ module.exports = {
     path: path.resolve(__dirname, './public')
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './public')
+    contentBase: path.resolve(__dirname, './public'),
+    proxy: {
+      '/api/v1.0': {
+        target: 'http://localhost:3000',
+      }
+    }
   },
   module: {
     loaders: [
