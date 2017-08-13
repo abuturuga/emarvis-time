@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
+import units from './units-reducer';
+import projects from './projects-reducer';
 
-const init = (store = {}, action) => {
-  return store;
-};
 
 export default combineReducers({
-  init
+  units,
+  projects
 });

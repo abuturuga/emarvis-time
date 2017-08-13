@@ -1,28 +1,36 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import { connect } from 'react-redux';
 import { AppBar } from './components/index';
-import { Provider } from 'react-redux'
-import store from './store';
+import { fetchUnits } from './actions/unit-actions';
+
 
 class App extends React.Component {
 
+  componentDidMount() {
+    this.props.dispatch(fetchUnits());
+  }
+
   render() {
     return(
-      <Provider store={store}>
-        <Router>
-          <div className="app-container">
-            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-              <AppBar />
-            </MuiThemeProvider>
-          </div>
-        </Router>
-      </Provider>
+        <div className="app-container">
+          <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+            <AppBar />
+          </MuiThemeProvider>
+        </div>
     );
   }
 
 }
 
+function mapPropsToState(state) {
+  return {
+    units: state.units,
+    projects: state.projects
+  };
+}
+
+App = connect(mapPropsToState)(App);
 export default App;
