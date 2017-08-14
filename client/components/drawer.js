@@ -28,12 +28,11 @@ class DrawerMenu extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return(
       <div>
         <Drawer open={this.state.open} onRequestChange={(open) => this.setState({open})}>
           <Divider />
-          <NavLink to="/inbox">
+          <NavLink to="/">
             <MenuItem leftIcon={<ContentInbox />}>Inbox</MenuItem>
           </NavLink>
           <NavLink to="/today">
