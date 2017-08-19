@@ -23,7 +23,6 @@ class DrawerMenu extends React.Component {
   }
 
   handleClose() {
-    console.log('handle close');
     this.setState({open: false});
   }
 

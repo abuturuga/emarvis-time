@@ -1,16 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { AppBar, UnitsList, WorkContainer, Drawer } from './components/index';
 import { fetchUnits } from './actions/unit-actions';
 import Views from './views/routes';
 import { HashRouter as Router } from 'react-router-dom';
 import { history } from './store';
+import { Header,  Aside, WorkContainer } from './components/index';
 
 
 class App extends React.Component {
 
   componentDidMount() {
-    console.log(this.props);
     this.props.dispatch(fetchUnits());
   }
 
@@ -18,8 +17,8 @@ class App extends React.Component {
     return(
       <Router>
         <div className="app-container">
-            <AppBar />
-            <Drawer />
+            <Header />
+            <Aside />
             <WorkContainer>
               <Views />
             </WorkContainer>

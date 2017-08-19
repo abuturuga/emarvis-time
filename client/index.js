@@ -7,7 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import store from './store';
 import App from './app';
-import './styles/style.scss';
+import './style.scss';
 
 
 ReactDOM.render(

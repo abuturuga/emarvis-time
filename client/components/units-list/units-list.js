@@ -24,12 +24,13 @@ class UnitLists extends React.Component {
 
   render() {
     return (
-      <Card>
-
-        <List>
-          {this.renderUnits()}
-        </List>
-      </Card>
+      <div className="units-list">
+        <Card>
+          <List>
+            {this.renderUnits()}
+          </List>
+        </Card>
+      </div>
     );
   }
 

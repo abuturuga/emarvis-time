@@ -3,7 +3,9 @@ import AppBar from 'material-ui/AppBar';
 
 
 export default () => (
-  <AppBar
-    title="Emarvis Time"
-  />
+  <div className="app-header">
+    <AppBar
+      title="Emarvis Time"
+    />
+  </div>
 );
